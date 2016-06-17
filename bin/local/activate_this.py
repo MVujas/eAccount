@@ -1,0 +1,1 @@
+/home/mlrd/projects/miloradposl/bin/activate_this.py
