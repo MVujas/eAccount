@@ -1,5 +1,5 @@
 {
-  "name": "poslasticarnica-ana",
+  "name": "eAccountant",
   "version": "1.0.0",
   "description": ",-----.,--.                  ,--. ,---.   ,--.,------.  ,------.     '  .--./|  | ,---. ,--.,--. ,-|  || o   \\  |  ||  .-.  \\ |  .---'     |  |    |  || .-. ||  ||  |' .-. |`..'  |  |  ||  |  \\  :|  `--,      '  '--'\\|  |' '-' ''  ''  '\\ `-' | .'  /   |  ||  '--'  /|  `---.      `-----'`--' `---'  `----'  `---'  `--'    `--'`-------' `------'     -----------------------------------------------------------------",
   "main": "gulpfile.js",
@@ -23,11 +23,10 @@
   },
   "repository": {
     "type": "git",
-    "url": "poslAna"
+    "url": "eAccountant"
   },
-  "keywords": [
-    "poslasticarnica",
-    "ana"
+    "keywords": [
+        "eAccountant"
   ],
   "author": "Milos Vujasinovic",
   "license": "ISC"
