@@ -150,8 +150,34 @@ module.exports = [
     function deleteFundsTicket(FundsTicketid) {
       return $http.delete(API_URL + 'FundsTicket/' + FundsTicketid + '/');
     }
+    
+    function updateConfig(Conf) {
+      return $http.put(
+        API_URL + 'Config/1/',
+        {
+          company: Conf.company,
+          lang: Conf.lang,
+          currency: Conf.currency,
+        });
+    }
+    
+    function getConfig() {
+      return $http.get(API_URL + 'Config/');
+    }
+    
+    function createConfig(Conf){
+      return $http.post(
+        API_URL + 'Config/',
+        {
+          company: Conf.company,
+          lang: Conf.lang,
+          currency: Conf.currency,
+        });
+    }
 
     return {
+      getConfig: getConfig,
+      updateConfig: updateConfig,
       changeFundsTicket: changeFundsTicket,
       createFund: createFund,
       changeFund: changeFund,

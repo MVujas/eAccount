@@ -1,0 +1,48 @@
+body {
+    background-color: rgb(240, 240, 240);
+}
+
+.cont {
+    display: table;
+    height: 100%;
+    position: absolute;
+    overflow: hidden;
+    width: 100%;
+}
+
+.helper {
+    display: table-cell;
+    vertical-align: middle;
+}
+
+.logForm {
+    border-radius: 5px;
+    background-color: rgb(250, 250, 250);
+    max-width: 500px;
+    margin: 0 auto;
+}
+
+.logForm header {
+    background-color: rgb(100, 100, 100);
+    border-radius: 5px 5px 0 0;
+    padding: 0 5px;
+    color: rgb(250, 250, 250);
+    margin: 0px;
+}
+
+.logForm .main {
+    border-radius: 0 0 5px 5px;
+    margin: 0px;
+    padding: 10px;
+    color: rgb(80, 80, 80);
+}
+
+.logForm .main span {
+    font-size: 25px;
+    margin: 2px;
+    
+}
+
+.logForm .main .failed-login {
+    color: rgb(183, 51, 51);
+}

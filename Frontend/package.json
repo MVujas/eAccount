@@ -1,5 +1,5 @@
 {
-  "name": "eAccountant",
+  "name": "eaccount",
   "version": "1.0.0",
   "description": ",-----.,--.                  ,--. ,---.   ,--.,------.  ,------.     '  .--./|  | ,---. ,--.,--. ,-|  || o   \\  |  ||  .-.  \\ |  .---'     |  |    |  || .-. ||  ||  |' .-. |`..'  |  |  ||  |  \\  :|  `--,      '  '--'\\|  |' '-' ''  ''  '\\ `-' | .'  /   |  ||  '--'  /|  `---.      `-----'`--' `---'  `----'  `---'  `--'    `--'`-------' `------'     -----------------------------------------------------------------",
   "main": "gulpfile.js",
@@ -15,18 +15,16 @@
     "vinyl-buffer": "^1.0.0",
     "vinyl-source-stream": "^1.1.0"
   },
-  "devDependencies": {
-    "gulp": "^3.9.1"
-  },
+  "devDependencies": {},
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
     "type": "git",
-    "url": "eAccountant"
+    "url": "eAccount"
   },
-    "keywords": [
-        "eAccountant"
+  "keywords": [
+    "eaccount"
   ],
   "author": "Milos Vujasinovic",
   "license": "ISC"

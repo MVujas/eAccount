@@ -4,10 +4,9 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
     <link rel="icon" href="img/favicon.png">
 
-    <title>eAccountant</title>
+    <title>eAccount</title>
 
     <!-- Bootstrap core CSS -->
     <link href="css/bootstrap.min.css" rel="stylesheet">
@@ -17,6 +16,7 @@
 
     <!-- Custom styles for this template -->
     <link href="css/dashboard.css" rel="stylesheet">
+    <link href="css/spinner.css" rel="stylesheet">
 
     <!-- Just for debugging purposes. Don't actually copy these 2 lines! -->
     <!--[if lt IE 9]><script src="js/ie8-responsive-file-warning.js"></script><![endif]-->
@@ -29,11 +29,11 @@
       <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
     <![endif]-->
 
-
+    
   </head>
 
-  <body ng-app="ana">
-
+  <body ng-app="ana" ng-controller="configController">
+    <div class="spinner"></div>
     <nav class="navbar navbar-inverse navbar-fixed-top">
       <div class="container-fluid">
         <div class="navbar-header">
@@ -43,14 +43,15 @@
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
           </button>
-          <a class="navbar-brand" href="#">eAccountant</a>
+          <a class="navbar-brand" href="#" ui-sref="home">eAccount</a>
         </div>
           <div id="navbar" class="navbar-collapse collapse" ng-controller="navBarController">
           <ul class="nav navbar-nav navbar-right visible-xs">
-            <li ng-class="{active: isActive('/racun/')}" attr="racun"><a ui-sref="racun">Račun</a></li>
-            <li ng-class="{active: isActive('/radnici/')}" attr="radnici"><a ui-sref="radnici">Radnici</a></li>
-            <li ng-class="{active: isActive('/troskovi/')}" attr="troskovi"><a ui-sref="troskovi">Troškovi</a></li>
-            <li ng-class="{active: isActive('/prihodi/')}" attr="prihodi"><a ui-sref="prihodi">Prihodi</a></li>
+            <li ng-class="{active: isActive('/racun/')}" attr="racun"><a ui-sref="racun">{{ text[0] }}</a></li>
+            <li ng-class="{active: isActive('/radnici/')}" attr="radnici"><a ui-sref="radnici">{{ text[1] }}</a></li>
+            <li ng-class="{active: isActive('/troskovi/')}" attr="troskovi"><a ui-sref="troskovi">{{ text[2] }}</a></li>
+            <li ng-class="{active: isActive('/prihodi/')}" attr="prihodi"><a ui-sref="prihodi">{{ text[3] }}</a></li>
+            <li><a ng-click=""><img src="img/en.jpg" style="height: 30px;"></a></li>
           </ul>
         </div>
       </div>
@@ -58,20 +59,25 @@
 
     <div class="container-fluid" ng-controller="navBarController">
       <div class="row">
-
+       
         <div class="col-sm-3 col-md-2 sidebar">
           <ul class="nav nav-sidebar">
+            {{ anaService.getConfig().data }}
             <li ng-class="{active: isActive('/racun/')}" attr="racun"><a ui-sref="racun">Račun<span class="sr-only">(current)</span></a></li>
             <li ng-class="{active: isActive('/radnici/')}" attr="radnici"><a ui-sref="radnici">Radnici</a></li>
             <li ng-class="{active: isActive('/troskovi/')}" attr="troskovi"><a ui-sref="troskovi">Troškovi</a></li>
             <li ng-class="{active: isActive('/prihodi/')}" attr="prihodi"><a ui-sref="prihodi">Prihodi</a></li>
           </ul>
+          
+          <div class="changeLangSB">
+            
+          </div>
         </div>
         <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main" ui-view></div>
       </div>
     </div>
 
-
+    
     <!-- Bootstrap core JavaScript
     ================================================== -->
     <!-- Placed at the end of the document so the pages load faster -->
@@ -81,7 +87,7 @@
     <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
     <script src="js/ie10-viewport-bug-workaround.js"></script>
 
-    <script src="js/dashboard.js"></script>
-
+    <script src="js/spinner.js"></script>
+  
   </body>
 </html>

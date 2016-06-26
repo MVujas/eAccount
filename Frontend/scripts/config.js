@@ -4,8 +4,21 @@ module.exports = [
   '$stateProvider',
   '$urlRouterProvider',
   function anaConfig($stateProvider, $urlRouterProvider){
-    $urlRouterProvider.otherwise('/racun/');
+    $urlRouterProvider.otherwise('/home/');
     $stateProvider
+      .state('home', {
+        url: '/home/',
+        resolve: {
+          config: ['anaService',
+            function(anaService){
+              return anaService.getConfig();
+            }
+          ]
+        },
+        controller: 'homeController',
+        templateUrl: 'views/home.html',
+        
+      })
       .state('racun', {
         url: '/racun/',
         resolve: {
@@ -23,6 +36,11 @@ module.exports = [
             function(anaService){
               return anaService.getWorkers();
             }
+          ],
+          config: ['anaService',
+            function(anaService){
+              return anaService.getConfig();
+            }
           ]
         },
         controller: 'racunController',
@@ -39,6 +57,11 @@ module.exports = [
           workerlists: ['anaService',
             function(anaService){
               return anaService.getWorkerLists();
+            }
+          ],
+          config: ['anaService',
+            function(anaService){
+              return anaService.getConfig();
             }
           ]
         },
@@ -58,6 +81,11 @@ module.exports = [
               return anaService.getCostsTicket();
             }
           ],
+          config: ['anaService',
+            function(anaService){
+              return anaService.getConfig();
+            }
+          ]
         },
         controller: 'troskoviController',
         templateUrl: 'views/troskovi.html',
@@ -75,6 +103,11 @@ module.exports = [
               return anaService.getFundsTicket();
             }
           ],
+          config: ['anaService',
+            function(anaService){
+              return anaService.getConfig();
+            }
+          ]
         },
         controller: 'prihodiController',
         templateUrl: 'views/prihodi.html',

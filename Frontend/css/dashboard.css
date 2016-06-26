@@ -32,6 +32,7 @@ body {
 /* Hide for mobile, show later */
 .sidebar {
   display: none;
+  position: relative;
 }
 @media (min-width: 768px) {
   .sidebar {
@@ -125,4 +126,21 @@ body {
 
 .racunHead {
   font-size: 20px;
+}
+
+.changeLangSB {
+  width: 50px;
+  height: 35px;
+  background: url('../img/rs.jpg') no-repeat;
+  background-size: 100% 100%;
+  position: absolute;
+  bottom: 30px;
+  left: 30px;
+  border: 1px solid rgb(200, 200, 200);
+  border-radius: 1px;
+  cursor: pointer;
+}
+
+.changeLangSB:hover {
+  opacity: 0.8;
 }

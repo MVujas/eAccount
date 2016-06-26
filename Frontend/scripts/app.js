@@ -11,10 +11,11 @@ angular.module('ana', [
   .controller('radniciController', require('./WController.js'))
   .controller('troskoviController', require('./CController.js'))
   .controller('prihodiController', require('./FController.js'))
+  .controller('homeController', require('./HController.js'))
   .controller('navBarController', ['$scope', '$location', function($scope, $location) {
     $scope.isActive = function(route) {
         return route === $location.path();
     }
   }])
-  .constant('API_URL', 'http://localhost:8000/api/v0/');
+  .constant('API_URL', 'https://api-mvujas.c9users.io/api/v0/');
 

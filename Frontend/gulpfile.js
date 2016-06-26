@@ -16,7 +16,7 @@ gulp.task('webserver',['javascript'], function setupWebServer(){
   gulp.src(micansPaths.app)
       .pipe(webserver({
         host: process.env.IP,
-        port: 8080,
+        port: process.env.PORT,
       }));
 });
 
